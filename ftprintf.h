@@ -1,22 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf_p.c                                      :+:      :+:    :+:   */
+/*   ftprintf.h                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sel-jari <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/02 12:23:21 by sel-jari          #+#    #+#             */
-/*   Updated: 2024/11/02 14:40:01 by sel-jari         ###   ########.fr       */
+/*   Created: 2024/11/02 12:23:46 by sel-jari          #+#    #+#             */
+/*   Updated: 2024/11/02 14:40:18 by sel-jari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ftprintf.h"
+#ifndef FTPRINTF_H
+# define FTPRINTF_H
 
-int	ft_printf_p(void *p)
-{
-	int	len;
+# include <unistd.h>
+# include <stdlib.h>
+# include <stdarg.h>
 
-	write(1, "0x", 2);
-	len = ft_printf_xl((unsigned long)p, 'x');
-	return (len + 2);
-}
+int	ft_printf_c(char c);
+int	ft_printf_s(char *s);
+int	ft_printf_id(int n);
+int	ft_printf_u(unsigned int n);
+int	ft_printf_x(unsigned int n, char c);
+int	ft_printf_xl(unsigned long n, char c);
+int ft_printf_p(void *p);
+#endif
