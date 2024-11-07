@@ -6,30 +6,30 @@
 /*   By: sel-jari <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/02 13:42:08 by sel-jari          #+#    #+#             */
-/*   Updated: 2024/11/02 15:04:42 by sel-jari         ###   ########.fr       */
+/*   Updated: 2024/11/07 20:58:10 by sel-jari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ftprintf.h"
+#include "ft_printf.h"
 
-int	ft_conversion(const char c , va_list arg)
+int	ft_conversion(const char c, va_list arg)
 {
-	int len;
+	int	len;
 
 	len = 0;
 	if (c == 'i' || c == 'd')
-		len = ft_printf_id(va_arg())	
+		len = ft_printf_id(va_arg(arg, int));
 	else if (c == 'u')
-		ft_printf_u(c)
+		ft_printf_u(va_arg(arg, unsigned int));
 	else if (c == 'c' || c == '%')
-		len = ft_printf_c(c)
+		len = ft_printf_c(va_arg(arg, int));
 	else if (c == 's')
-		len = ft_printf_s(c)
+		len = ft_printf_s(va_arg(arg, char *));
 	else if (c == 'x')
-		len = ft_printf_x(c)
+		len = ft_printf_x(va_arg(arg, unsigned int), 'x');
 	else if (c == 'X')
-		len = ft_printf_xx(c)
+		len = ft_printf_x(va_arg(arg, unsigned int), 'x');
 	else
-		len = ft_printf_p()
-	return (len)
+		len = ft_printf_p(va_arg(arg, void *));
+	return (len);
 }

@@ -6,11 +6,11 @@
 /*   By: sel-jari <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/02 12:22:10 by sel-jari          #+#    #+#             */
-/*   Updated: 2024/11/02 13:33:13 by sel-jari         ###   ########.fr       */
+/*   Updated: 2024/11/07 20:57:54 by sel-jari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ftprintf.h"
+#include "ft_printf.h"
 
 int	ft_printf_x(unsigned int n, char c)
 {
