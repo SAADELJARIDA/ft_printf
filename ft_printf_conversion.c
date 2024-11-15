@@ -6,7 +6,7 @@
 /*   By: sel-jari <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/02 13:42:08 by sel-jari          #+#    #+#             */
-/*   Updated: 2024/11/07 20:58:10 by sel-jari         ###   ########.fr       */
+/*   Updated: 2024/11/12 03:40:31 by sel-jari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,10 @@ int	ft_conversion(const char c, va_list arg)
 		len = ft_printf_id(va_arg(arg, int));
 	else if (c == 'u')
 		ft_printf_u(va_arg(arg, unsigned int));
-	else if (c == 'c' || c == '%')
+	else if (c == 'c')
 		len = ft_printf_c(va_arg(arg, int));
+	else if (c == '%')
+		len = ft_printf_c('%');
 	else if (c == 's')
 		len = ft_printf_s(va_arg(arg, char *));
 	else if (c == 'x')

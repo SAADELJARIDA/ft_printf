@@ -6,7 +6,7 @@
 /*   By: sel-jari <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/02 12:22:38 by sel-jari          #+#    #+#             */
-/*   Updated: 2024/11/07 20:57:11 by sel-jari         ###   ########.fr       */
+/*   Updated: 2024/11/12 03:42:01 by sel-jari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int	ft_printf(const char *format, ...)
 	while (*format)
 	{
 		if (*format == '%')
-		{
+		{	
 			format++;
 			len += ft_conversion(*format, arg);
 			format++;
@@ -37,11 +37,3 @@ int	ft_printf(const char *format, ...)
 	va_end(arg);
 	return (len);
 }
-/*
-int main()
-{
-	int len;
-	len = ft_printf("a address is %x",12345);
-	printf("a address is %x         \n%d\n",12345 ,len);
-}
-*/
